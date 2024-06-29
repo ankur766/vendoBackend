@@ -111,6 +111,20 @@ app.get('/api/total-salary', async (req, res) => {
     res.status(500).json({ error: 'An error occurred while fetching the total salary.' });
   }
 });
+
+// Function to calculate total salary
+const getTotalSalary = async () => {
+  try {
+    const users = await userModel.find();
+    let totalSalary = 0;
+    users.forEach(user => {
+      totalSalary += user.salary;
+    });
+    return totalSalary;
+  } catch (error) {
+    throw new Error('Error calculating total salary');
+  }
+};
   
 
 //******************************Bank   BankAPI code******************************
