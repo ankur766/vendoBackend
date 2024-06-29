@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema({
     vendor_email: { type: String, unique: true },
     bank_account_no: String,
     bank_name: String,
-    salary: Number, // Corrected type definition
+  salary: Number,
     address_line1: String,
     address_line2: String,
     city: String,
